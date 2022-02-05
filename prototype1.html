@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+</head>
+<body bgcolor="whitesmoke">
+
+    <center><h1>Bank Simpel</h1>
+
+    <form>
+        <div class="row">
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Setor" id="nabung">
+          </div>
+        </div><br>
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Tarik" id="ambil">
+          </div><br>
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Nabung" id="simpan">
+          </div><br>
+          <div>
+          cek saldo  <input type="radio" onclick="sumbit()" id="lihat">
+          </div><br>
+          <button class="btn btn-primary col-sm-12" style="background-color: grey;" onclick="sumbit()">Sumbit</button>
+        </div>
+      </form>
+    <script>
+        function sumbit(){
+
+            var setor = document.getElementById("nabung").value;
+            var nabung = document.getElementById("simpan").value;
+            var ceksaldo =document.getElementById("lihat").value;
+            var tarik = document.getElementById("ambil").value;
+            var saldo=50000;
+
+            if (setor){
+                saldo = parseInt(setor) +parseInt(saldo)
+                alert("setor ke rekening berhasil dan menjadi : " + saldo)
+            }
+            else if(tarik){
+                alert("Anda Menarik Tunai Senilai: Rp."+ tarik)
+            }
+            else if(nabung){
+            saldo = parseInt(nabung) +parseInt(saldo)
+                alert("tabungan anda sekarang :  " + saldo)
+            }
+            else if(ceksaldo){
+              alert("apakah anda ingin melihat saldo anda? ")
+              alert("saldo anda adalah : " + saldo)
+
+            }
+        }
+    </script>
+</body>
+</html>
+  <style>
+       @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+body {
+  color: #484848;
+  font-family: 'Lato', sans-serif;
+  padding: 1em;
+  line-height: 1.5;
+}
+
+.flex {
+  background: #fdfdfd;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items:center;
+  margin: 0 auto;
+  border-radius:5px;
+}
+.element-center {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.typewrite {
+    font-size: 16pt;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    margin-top: 0.3em;
+}
+
+#inputs {
+    padding: 10px;
+}
+
+input,
+button {
+  font-size: .85em;
+  padding: .65em 1em;
+  border-radius: .3em;
+  outline: 0;
+}
+input {
+  border: 2px solid #dcdcdc;
+  margin-right: 1em;
+}
+
+button {
+    color: white;
+    background: #508abc;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+label {
+    font-size: 2em;
+}
+
+#btnDeposit, #btnWithdraw {
+    width: 8em;
+}
+  </style>
